@@ -5,15 +5,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by admin on 12.12.2015.
- */
 public class GenericStackTest {
     String[] inputArray = {"First", "Second", "Third"};
     ArrayList<String> inputList;
@@ -77,7 +73,7 @@ public class GenericStackTest {
 
     @Test
     public void testIsFull() throws Exception {
-        for (String inputArrayItem: inputArray) {
+        for (String inputArrayItem : inputArray) {
             assertFalse(stack.isFull());
             stack.push(inputArray[0]);
         }
@@ -92,7 +88,7 @@ public class GenericStackTest {
         stack.pushAll(inputList);
         assertEquals(inputArray.length, stack.getSize());
         assertTrue(stack.isFull());
-        for (int i = inputArray.length - 1; i >= 0 ; i--) {
+        for (int i = inputArray.length - 1; i >= 0; i--) {
             assertEquals(inputArray[i], stack.pop());
         }
         assertEquals(0, stack.getSize());
